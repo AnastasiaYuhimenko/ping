@@ -19,7 +19,7 @@ jobs:
       run: |
         curl -LsSf https://astral.sh/uv/install.sh | sh
         source $HOME/.local/bin/env
-        export PATH="$HOME/.cargo/bin:$PATH"
+        export PATH="$HOME/.local/bin:$PATH"
         echo "${{ secrets.ENV }}" | base64 -d > .env
         uv sync
         uv run pytest -q || echo "No tests - OK"
@@ -42,7 +42,7 @@ jobs:
           git pull origin main
           curl -LsSf https://astral.sh/uv/install.sh | sh
           source $HOME/.local/bin/env
-          export PATH="$HOME/.cargo/bin:$PATH"
+          export PATH="$HOME/.local/bin:$PATH"
           echo "${{ secrets.ENV }}" | base64 -d > .env
           uv sync
           chmod +x deploy.sh
