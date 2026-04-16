@@ -36,7 +36,7 @@ jobs:
         username: anastasia
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
-          cd /home/anastasia/backend || mkdir -p /home/anastasia/backend && git clone ${{ github.repositoryUrl }} /home/anastasia/backend
+          # cd /home/anastasia/backend || mkdir -p /home/anastasia/backend
           cd /home/anastasia/backend
           git pull origin main
           export PATH="$HOME/.cargo/bin:$PATH"
