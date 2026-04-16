@@ -37,8 +37,9 @@ jobs:
         key: ${{ secrets.SSH_PRIVATE_KEY }}
         script: |
           # cd /home/anastasia/backend || mkdir -p /home/anastasia/backend
-          cd /home/anastasia/backend
+          cd /home/anastasia/backend/ping
           git pull origin main
+          curl -LsSf https://astral.sh/uv/install.sh | sh
           export PATH="$HOME/.cargo/bin:$PATH"
           echo "${{ secrets.ENV }}" | base64 -d > .env
           uv sync
