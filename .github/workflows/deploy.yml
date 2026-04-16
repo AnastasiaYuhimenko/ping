@@ -1,4 +1,4 @@
-name: CI/CD Pickme Backend
+name: CI/CD Ping Backend
 on:
   push:
     branches: [ main ]
