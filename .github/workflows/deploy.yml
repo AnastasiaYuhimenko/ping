@@ -39,6 +39,7 @@ jobs:
         script: |
           # cd /home/anastasia/backend || mkdir -p /home/anastasia/backend
           cd /home/anastasia/backend/ping
+          git checkout -- .
           git pull origin main
           curl -LsSf https://astral.sh/uv/install.sh | sh
           source $HOME/.local/bin/env
